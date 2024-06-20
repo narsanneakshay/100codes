@@ -49,6 +49,7 @@ public class Main
             Array[i] = sc.nextInt();
         }
         System.out.println("Minimum element in the array is : "+minimun(Array,n));
+        System.out.println("Recursion Minimum element in the array is : "+minimun(Array,n,0));
 	}
 	public static int minimun(int []array , int size){
 	    int maximum_ele = Integer.MAX_VALUE;
@@ -58,6 +59,10 @@ public class Main
 	        }
 	    }
 	    return maximum_ele;
+	}
+	public static int minimun(int []array , int size,int i){
+	    if(i>=size-1) return array[i];
+	    return Math.min(array[i],minimun(array,size,i+1));
 	}
 
 
